@@ -85,8 +85,8 @@ copy_files(train_files, train_img_path, train_lbl_path, input_lbl_path)
 copy_files(val_files, val_img_path, val_lbl_path, input_lbl_path)
 
 shutil.copy(
-    os.path.join(DATA_PATH, "classes"),
-    os.path.join(output_base, "classes")
+    os.path.join(DATA_PATH, "classes.txt"),
+    os.path.join(output_base, "classes.txt")
 )
 
 print("Train/Validation bölümü tamamlandı! Bir sonraki hücreye geçebilirsin!")

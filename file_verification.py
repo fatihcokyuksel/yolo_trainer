@@ -5,7 +5,7 @@ import zipfile
 # etiketleme label studio üzerinden yapılmadıysa bu dosya üretilmemiş olabilir,
 # bunu kaldırmaya gerek görüyorsan kaldır
 
-ZIP_NAME = "dataset.zip"
+ZIP_NAME = "data.zip"
 
 UPLOAD_PATH = f"/content/{ZIP_NAME}"
 EXTRACT_PATH = "/content/dataset"
@@ -23,8 +23,8 @@ with zipfile.ZipFile(UPLOAD_PATH, 'r',) as zip_ref:
 required = {
     "images/": os.path.isdir(os.path.join(EXTRACT_PATH, "images")),
     "labels/": os.path.isdir(os.path.join(EXTRACT_PATH, "labels")),
-    "classes": os.path.isdir(os.path.join(EXTRACT_PATH, "classes")),
-    "notes.json": os.path.isdir(os.path.join(EXTRACT_PATH, "notes.json"))
+    "classes": os.path.isfile(os.path.join(EXTRACT_PATH, "classes.txt")),
+    "notes.json": os.path.isfile(os.path.join(EXTRACT_PATH, "notes.json"))
 }
 
 
@@ -94,7 +94,7 @@ elif warnings:
     print("Her verinin etiketli olduğunu veya her etiketin verisi olduğunu kontrol et!")
 
 else:
-    classes_path = os.path.join(EXTRACT_PATH, "classes")
+    classes_path = os.path.join(EXTRACT_PATH, "classes.txt")
     if os.path.isfile(classes_path):
         with open(classes_path, "r") as f:
             classes = [line.strip() for line in f if line.strip()]
