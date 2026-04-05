@@ -1,6 +1,10 @@
 import os
 import zipfile
 
+# TO DO : şu anda notes.json için de doğrulama yapılıyor,
+# etiketleme label studio üzerinden yapılmadıysa bu dosya üretilmemiş olabilir,
+# bunu kaldırmaya gerek görüyorsan kaldır
+
 ZIP_NAME = "dataset.zip"
 
 UPLOAD_PATH = f"/content/{ZIP_NAME}"
