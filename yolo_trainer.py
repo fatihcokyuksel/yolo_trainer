@@ -1,6 +1,6 @@
 from ultralytics import YOLO
 
-def train(model_size="yolov11s.pt", epochs=50, image_size=640, batch_size=16, project_name="yolo_training"):
+def train(model_size="yolo11s.pt", epochs=50, image_size=640, batch_size=16, project_name="yolo_training"):
     model = YOLO(model_size)
     model.train(
         data="/content/data.yaml",
