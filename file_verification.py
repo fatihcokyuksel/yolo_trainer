@@ -1,7 +1,7 @@
 import os
 import zipfile
 
-ZIP_NAME = "dataset.zip"
+ZIP_NAME = "data.zip"
 
 UPLOAD_PATH = f"/content/{ZIP_NAME}"
 EXTRACT_PATH = "/content/dataset"
