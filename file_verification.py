@@ -19,8 +19,8 @@ with zipfile.ZipFile(UPLOAD_PATH, 'r',) as zip_ref:
 required = {
     "images/": os.path.isdir(os.path.join(EXTRACT_PATH, "images")),
     "labels/": os.path.isdir(os.path.join(EXTRACT_PATH, "labels")),
-    "classes": os.path.isdir(os.path.join(EXTRACT_PATH, "classes.txt")),
-    "notes.json": os.path.isdir(os.path.join(EXTRACT_PATH, "notes.json"))
+    "classes": os.path.isfile(os.path.join(EXTRACT_PATH, "classes.txt")),
+    "notes.json": os.path.isfile(os.path.join(EXTRACT_PATH, "notes.json"))
 }
 
 
