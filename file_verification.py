@@ -1,5 +1,6 @@
 import os
 import zipfile
+import shutil
 
 
 ZIP_NAME = "data.zip"
@@ -10,7 +11,7 @@ EXTRACT_PATH = "/content/dataset"
 if not os.path.exists(UPLOAD_PATH):
     raise FileNotFoundError(f"{ZIP_NAME} bulunamadı. Dosyayı yüklediğinizden emin olunuz.")
 
-
+shutil.rmtree(EXTRACT_PATH, ignore_errors=True)
 
 with zipfile.ZipFile(UPLOAD_PATH, 'r',) as zip_ref:
     zip_ref.extractall(EXTRACT_PATH)
