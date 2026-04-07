@@ -85,7 +85,7 @@ if errors:
     print("\n Zip dosyalarının yapısını kontrol edip tekrar yükle!")
     
 elif warnings:
-    print("DOĞRULAMA BAŞARISIZ!")
+    print("UYARI, Devam Edebilirsin!")
     for w in warnings:
         print(f"-- {w}")
     print("Her verinin etiketli olduğunu veya her etiketin verisi olduğunu kontrol et!")
