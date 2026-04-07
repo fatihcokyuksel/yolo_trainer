@@ -1,9 +1,6 @@
 import os
 import zipfile
 
-# TO DO : şu anda notes.json için de doğrulama yapılıyor,
-# etiketleme label studio üzerinden yapılmadıysa bu dosya üretilmemiş olabilir,
-# bunu kaldırmaya gerek görüyorsan kaldır
 
 ZIP_NAME = "data.zip"
 
@@ -23,8 +20,7 @@ with zipfile.ZipFile(UPLOAD_PATH, 'r',) as zip_ref:
 required = {
     "images/": os.path.isdir(os.path.join(EXTRACT_PATH, "images")),
     "labels/": os.path.isdir(os.path.join(EXTRACT_PATH, "labels")),
-    "classes": os.path.isfile(os.path.join(EXTRACT_PATH, "classes.txt")),
-    "notes.json": os.path.isfile(os.path.join(EXTRACT_PATH, "notes.json"))
+    "classes": os.path.isfile(os.path.join(EXTRACT_PATH, "classes.txt"))
 }
 
 
