@@ -2,5 +2,5 @@ from ultralytics import YOLO
 
 model = YOLO("best.pt")
 
-result = model.predict("resim3.png", save=True)
+result = model.predict("test_img/resim4.png", save=True)
 
