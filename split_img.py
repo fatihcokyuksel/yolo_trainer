@@ -20,7 +20,7 @@ if not (0.01 <= TRAIN_PCT <= 0.99):
     sys.exit(0)
 
 
-output_base = "/content/data"
+output_base = "/content/split_data"
 if os.path.exists(output_base):
     shutil.rmtree(output_base)
     print("Eski train/val klasörleri temizlendi!")
