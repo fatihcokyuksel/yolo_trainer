@@ -138,7 +138,7 @@ def augmentation(augment_count=3):
             )
 
             aug_img = augmented["image"]
-            aug_img = cv2.cvtColor(aug_img, cv2.RGB2BGR)
+            aug_img = cv2.cvtColor(aug_img, cv2.COLOR_RGB2BGR)
             aug_bboxes = augmented["bboxes"]
             aug_bboxes = [clamp_bbox(b) for b in aug_bboxes]
             aug_labels = augmented["class_labels"]
